@@ -19,12 +19,13 @@ const responseSchema = new Schema(
       type: Date,
       default: Date.now,
       get: (date) => {
-        return `${date.toLocaleDateString()}`;
+        return date.toLocaleDateString()
+      },
     },
   },
   {
     toJSON: {
-      getters: true,
+      getters: Boolean,
     },
     id: false,
   }
